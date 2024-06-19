@@ -249,7 +249,9 @@ console.log(
 console.log(charactersNames);
 
 for (let i = 0; i < femaleCharacters.length; i++) {
+  //////////////////////////////////////////////////////////
   const femaleName = femaleCharacters[i];
+  //////////////////////////////////////////////////////////
   for (let index = 0; index < charactersNames.length; index++) {
     if (femaleName === charactersNames[index]) {
       charactersNames.splice(index, 1);
