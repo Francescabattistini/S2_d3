@@ -118,7 +118,7 @@ console.log(charactersNames);
   "***************************ESERCIZIO DUE***************************"
 );
 for (let index = 0; index < starWarsCharacters.length; index++) {
-  const names = starWarsCharacters[index];
+  const names = starWarsCharacters[index].name;
   charactersNames.push(names);
 }
 console.log(charactersNames);
@@ -210,7 +210,7 @@ console.log("Massa totale dell'equipaggio:", crewMass);
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
 console.log(
-  "***************************ESERCIZIO SEI***************************"
+  "***************************ESERCIZIO SETTE***************************"
 );
 if (crewMass < 500) {
   console.log("Ship is under loaded");
@@ -227,12 +227,84 @@ if (crewMass < 500) {
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
-
+console.log(
+  "***************************ESERCIZIO OTTO***************************"
+);
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const character = starWarsCharacters[i];
+  console.log(" QUESTO è IL CONSOLELOG DI CHARACTER:", character);
+  if (character.gender === "n/a") {
+    character.gender = "robot";
+  }
+}
+console.log(starWarsCharacters);
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
+console.log(
+  "***************************ESERCIZIO NOVE***************************"
+);
 
+console.log(charactersNames);
+
+for (let i = 0; i < femaleCharacters.length; i++) {
+  const femaleName = femaleCharacters[i];
+  for (let index = 0; index < charactersNames.length; index++) {
+    if (femaleName === charactersNames[index]) {
+      charactersNames.splice(index, 1);
+    }
+  }
+}
+
+console.log(charactersNames);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+console.log(
+  "***************************ESERCIZIO dIECI***************************"
+);
+
+const characterLenght = starWarsCharacters.length - 1;
+const randomCharacter =
+  starWarsCharacters[Math.floor(Math.random() * (0, characterLenght))];
+
+if (randomCharacter.gender === "female") {
+  console.log(
+    "Lei è",
+    randomCharacter.name,
+    ",è alta",
+    randomCharacter.height,
+    ",la sua massa è",
+    randomCharacter.mass,
+    ",il colore dei suoi capelli è",
+    randomCharacter.hair_color,
+    ",il colore della sua pelle è",
+    randomCharacter.skin_color,
+    "ma non la giudichiamo per questo, il colore dei suoi occhi è",
+    randomCharacter.eye_color,
+    ",è nata",
+    randomCharacter.birth_year,
+    ",il suo genere è",
+    randomCharacter.gender
+  );
+} else {
+  console.log(
+    "Lui è",
+    randomCharacter.name,
+    ",è alto",
+    randomCharacter.height,
+    ",la sua massa è",
+    randomCharacter.mass,
+    ",il colore dei suoi capelli è",
+    randomCharacter.hair_color,
+    ",il colore della sua pelle è",
+    randomCharacter.skin_color,
+    "ma non lo giudichiamo per questo, il colore dei suoi occhi è",
+    randomCharacter.eye_color,
+    ",è nato",
+    randomCharacter.birth_year,
+    ",il suo genere è",
+    randomCharacter.gender
+  );
+}
